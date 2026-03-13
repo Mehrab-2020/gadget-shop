@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Shop | Premium Tech in BD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #161616;
+            --accent-color: #00ff88; /* Cyber Green */
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+        nav h1 { font-size: 1.5rem; letter-spacing: -1px; color: var(--accent-color); }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 5%;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a3a2a 0%, #0a0a0a 70%);
+        }
+        .hero h2 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { color: var(--text-dim); margin-bottom: 2rem; }
+
+        /* Bento Grid Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .section-title { margin: 40px 0 20px; font-size: 1.8rem; border-left: 4px solid var(--accent-color); padding-left: 15px; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+
+        .card img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 20px; }
+        .tag { background: #333; color: var(--accent-color); padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+        
+        .price { font-size: 1.5rem; font-weight: 700; margin: 15px 0; display: block; }
+        .price span { font-size: 0.9rem; color: var(--text-dim); font-weight: 400; }
+
+        .buy-btn {
+            width: 100%;
+            background: var(--accent-color);
+            color: #000;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            display: block;
+            transition: opacity 0.2s;
+        }
+        .buy-btn:hover { opacity: 0.8; }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float img { width: 35px; }
+
+        footer { text-align: center; padding: 60px 0; color: var(--text-dim); border-top: 1px solid #222; margin-top: 80px; }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>GADGET SHOP.</h1>
+        <div style="font-size: 0.9rem; color: var(--text-dim);">Fast Delivery in Dhaka</div>
+    </nav>
+
+    <section class="hero">
+        <span class="tag">New 2026 Collection</span>
+        <h2>The Future of Tech.</h2>
+        <p>Premium Smartwatches, Hi-Fi TWS, and Rapid Charging Adapters.</p>
+    </section>
+
+    <div class="container">
+        <h3 class="section-title">Smartwatches</h3>
+        <div class="product-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1508685096489-7aac291ba597?q=80&w=600" alt="Watch">
+                <h3>Colmi i28 Ultra</h3>
+                <p style="color: var(--text-dim)">Amoled Display | BT Calling</p>
+                <span class="price">4,200 <span>BDT</span></span>
+                <a href="https://wa.me/8801XXXXXXXXX?text=I%20want%20to%20order%20the%20Colmi%20i28" class="buy-btn">Order via WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=600" alt="Watch">
+                <h3>Kieslect Pro 5</h3>
+                <p style="color: var(--text-dim)">Premium Metal Build | 100+ Sports</p>
+                <span class="price">5,800 <span>BDT</span></span>
+                <a href="#" class="buy-btn">Order via WhatsApp</a>
+            </div>
+        </div>
+
+        <h3 class="section-title">TWS Earphones</h3>
+        <div class="product-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600" alt="TWS">
+                <h3>Anker Soundcore R50i</h3>
+                <p style="color: var(--text-dim)">Deep Bass | 30h Playtime</p>
+                <span class="price">1,850 <span>BDT</span></span>
+                <a href="#" class="buy-btn">Order via WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600" alt="TWS">
+                <h3>SoundPeats Capsule 3 Pro</h3>
+                <p style="color: var(--text-dim)">LDAC Audio | Active Noise Cancelling</p>
+                <span class="price">3,900 <span>BDT</span></span>
+                <a href="#" class="buy-btn">Order via WhatsApp</a>
+            </div>
+        </div>
+
+        <h3 class="section-title">Chargers & Adapters</h3>
+        <div class="product-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1619130730444-15f5b2b2a632?q=80&w=600" alt="Charger">
+                <h3>UGREEN Nexode 30W</h3>
+                <p style="color: var(--text-dim)">GaN Fast Tech | Safe for iPhone/Android</p>
+                <span class="price">1,450 <span>BDT</span></span>
+                <a href="#" class="buy-btn">Order via WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?q=80&w=600" alt="Charger">
+                <h3>Samsung 25W Original</h3>
+                <p style="color: var(--text-dim)">Super Fast Charging | PD 3.0</p>
+                <span class="price">1,200 <span>BDT</span></span>
+                <a href="#" class="buy-btn">Order via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/8801998421007" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Gadget Shop Bangladesh. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Managed by GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
