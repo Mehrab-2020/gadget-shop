@@ -7,11 +7,13 @@ A modern, responsive e-commerce website for Gadget Shop BD, featuring chargers, 
 - 🎨 Modern, tech-forward design with smooth animations
 - 📱 Fully responsive (mobile, tablet, desktop)
 - 🛒 Shopping cart functionality with local storage
+- 💬 **WhatsApp integration** - Orders sent directly to WhatsApp
 - 🔍 Product filtering by category
 - 📧 Contact form
 - 🖼️ Real product images for featured items
 - ⚡ Fast and lightweight
 - 🎯 SEO-friendly structure
+- 🟢 Floating WhatsApp button for instant contact
 
 ## Product Categories
 
@@ -26,6 +28,25 @@ A modern, responsive e-commerce website for Gadget Shop BD, featuring chargers, 
 - CSS3 (with custom properties and animations)
 - Vanilla JavaScript
 - Google Fonts (Montserrat, DM Sans)
+- WhatsApp Business API integration
+
+## How WhatsApp Ordering Works
+
+1. **Customer adds products** to cart
+2. **Clicks "Order via WhatsApp"** button
+3. **WhatsApp opens** with pre-filled message containing:
+   - Product names and quantities
+   - Individual prices
+   - Total amount
+4. **Customer sends** the message to your WhatsApp
+5. **You receive** the order and can confirm with customer
+
+**Benefits:**
+- ✅ No payment gateway needed
+- ✅ Direct customer communication
+- ✅ Easy order tracking
+- ✅ Build customer relationships
+- ✅ Perfect for Bangladesh market
 
 ## Local Development
 
@@ -103,6 +124,25 @@ https://john123.github.io/gadget-shop-bd/
 ```
 
 ## Customization Guide
+
+### Update WhatsApp Number
+
+The website is configured to send orders to WhatsApp number: **01998421007**
+
+To change the WhatsApp number, edit `script.js`:
+
+1. Find the `sendOrderToWhatsApp()` function (around line 75)
+2. Update this line:
+   ```javascript
+   const phoneNumber = '8801998421007'; // Change this number
+   ```
+   **Format:** Use country code + number without spaces or dashes
+   - Bangladesh: 880 + your 11-digit number
+   - Example: For 01712345678, use: 8801712345678
+
+3. Also update the floating button and contact section in `index.html`:
+   - Search for `wa.me/8801998421007` and replace with your number
+   - Update the phone display in the contact section
 
 ### Update Shop Information
 

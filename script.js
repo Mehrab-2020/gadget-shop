@@ -315,6 +315,34 @@ function loadCartFromStorage() {
     }
 }
 
+// Send Order to WhatsApp
+function sendOrderToWhatsApp() {
+    const phoneNumber = '8801998421007'; // WhatsApp number with country code
+    
+    // Build order message
+    let message = '*🛒 New Order from Gadget Shop BD*\n\n';
+    message += '*Order Details:*\n';
+    message += '━━━━━━━━━━━━━━━━\n\n';
+    
+    cart.forEach((item, index) => {
+        message += `${index + 1}. *${item.name}*\n`;
+        message += `   Quantity: ${item.quantity}\n`;
+        message += `   Price: ৳${item.price} x ${item.quantity} = ৳${item.price * item.quantity}\n\n`;
+    });
+    
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    message += '━━━━━━━━━━━━━━━━\n';
+    message += `*Total Amount: ৳${total}*\n\n`;
+    message += 'Please confirm my order. Thank you!';
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+}
+
 // Event Listeners
 function setupEventListeners() {
     // Navigation
@@ -367,15 +395,14 @@ function setupEventListeners() {
         e.target.reset();
     });
     
-    // Checkout
+    // Checkout - Send to WhatsApp
     document.querySelector('.checkout-btn').addEventListener('click', () => {
         if (cart.length === 0) {
             alert('Your cart is empty!');
             return;
         }
         
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        alert(`Checkout - Total: ৳${total}\n\nIn a real application, this would redirect to payment processing.`);
+        sendOrderToWhatsApp();
     });
     
     // Smooth scroll for CTA button
